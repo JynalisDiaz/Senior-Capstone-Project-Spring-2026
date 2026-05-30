@@ -164,15 +164,15 @@ Testing Results:
 The tool was tested on 10 job postings: 6 AI-generated (2 obvious fakes, 2 clearly legitimate, 2 deliberately tricky), 3 real postings from Handshake, and 1 real WhatsApp scam posting.
 
  Test Case                                       Result   
--Obvious fakes                                   Mixed, some correctly returned LIKELY FAKE with multiple flags and explanations; others returned LIKELY LEGITIMATE despite being fake, showing the ML model's reliance on known scam vocabulary
+-Obvious fakes;                                   Mixed, some correctly returned LIKELY FAKE with multiple flags and explanations; others returned LIKELY LEGITIMATE despite being fake, showing the ML model's reliance on known scam vocabulary
 
--Clear legitimate postings                       Correctly returned LIKELY LEGITIMATE with safety net reminder to verify independently
+-Clear legitimate postings;                       Correctly returned LIKELY LEGITIMATE with safety net reminder to verify independently
 
--Hard fakes with hidden patterns                 Inconsistent, the tool caught some through the rule-based layer when the ML model missed the pattern, but others slipped through entirely due to professionally written language with no common scam phrases
+-Hard fakes with hidden patterns;                Inconsistent, the tool caught some through the rule-based layer when the ML model missed the pattern, but others slipped through entirely due to professionally written language with no common scam phrases
 
--Professionally written fake (no scam language)  Returned LIKELY LEGITIMATE, known limitation; if a posting avoids typical scam vocabulary the model has no pattern to match against
+-Professionally written fake (no scam language);  Returned LIKELY LEGITIMATE, known limitation; if a posting avoids typical scam vocabulary the model has no pattern to match against
 
--WhatsApp scam posting                           Flagged: unusual contact method, personal email, suspicious area code that was given to the "model_train.py"
+-WhatsApp scam posting;                           Flagged: unusual contact method, personal email, suspicious area code that was given to the "model_train.py"
 
 Limitations:
 
