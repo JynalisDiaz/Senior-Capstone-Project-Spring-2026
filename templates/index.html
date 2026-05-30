@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ app_name }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 {{ app_name }}</h1>
+        <a href="/history" class="history-link"> View All Past Anaylyses</a>
+        <p>Paste a job posting below to check if it might be fraudulent. This tool will analyze the text and highlight any warning signs.</p>
+        <form action="/analyze" method="POST">
+            <textarea name="job_text" rows="12" placeholder="Paste job description here..."></textarea>
+            <br>
+            <button type="submit">Analyze Posting</button>
+        </form>
+        <p class="disclaimer">⚠️ This tool is meant to guide and educate, not provide a guaranteed verdict.</p>
+    </div>
+</body>
+</html>

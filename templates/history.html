@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>History - {{ app_name }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 {{ app_name }}</h1>
+        <h2>📋 All Past Analyses</h2>
+
+        {% if analyses %}
+        <p>{{ analyses|length }} total submission(s) recorded.</p>
+        {% for item in analyses %}
+        <div class="history-card {{ 'history-fake' if 'FAKE' in item['verdict'] else 'history-legit' }}">
+            <div class="history-verdict">
+                {{ item['verdict'] }} — {{ item['confidence'] }} fraud probability
+            </div>
+            <div class="history-flags">
+                {{ item['flag_count'] }} warning flag(s): {{ item['flags'] }}
+            </div>
+            <div class="history-timestamp">
+                🕐 {{ item['timestamp'] }}
+            </div>
+            <div class="history-preview">
+                {{ item['job_text'][:150] }}...
+            </div>
+        </div>
+        {% endfor %}
+
+        {% else %}
+        <p>No analyses recorded yet. Go analyze a posting!</p>
+        {% endif %}
+
+        <a href="/">← Back to Home</a>
+    </div>
+</body>
+</html>
+

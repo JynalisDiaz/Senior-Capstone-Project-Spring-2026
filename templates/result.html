@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results - {{ app_name }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 {{ app_name }}</h1>
+        <h2>Analysis Result</h2>
+
+        <div class="verdict {{ 'fake' if 'FAKE' in result.verdict else 'legit' }}">
+            <h2>{{ result.verdict }}</h2>
+            <p>Fraud probability: <strong>{{ result.confidence }}</strong></p>
+        </div>
+
+        {% set confidence_val = result.confidence | replace('%', '') | float %}
+
+        {% if 'LEGITIMATE' in result.verdict and confidence_val >= 15 and confidence_val < 40 %}
+        <div class="caution-message">
+            ⚠️ <strong>Proceed with caution.</strong> While this posting appears legitimate,
+            our tool detected a low level of uncertainty. This could mean the posting contains
+            subtle characteristics sometimes associated with fraud. We recommend independently
+            verifying the company on LinkedIn, checking their official website, and never
+            sharing personal information until you have confirmed the employer is real.
+        </div>
+        {% endif %}
+
+        {% if 'FAKE' in result.verdict and confidence_val < 70 %}
+        <div class="caution-message">
+            ⚠️ <strong>Use your own judgment.</strong> Our tool flagged this posting but with
+            moderate confidence. It is possible this is a legitimate posting that contains
+            some unusual language. Cross reference the company name, contact details, and
+            job description independently before making any decisions.
+        </div>
+        {% endif %}
+
+        {% if result.flags %}
+        <div class="flags">
+            <h3>⚠️ Warning Flags Detected ({{ result.flags|length }}):</h3>
+            {% for item in result.flags %}
+            <div class="flag-card">
+                <div class="flag-title">⚠️ {{ item.flag }}</div>
+                <div class="flag-explanation">{{ item.explanation }}</div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="no-flags">
+            <p>✅ No specific warning flags detected in this posting.</p>
+            <p>While no flags were found, always research the company independently
+            before applying or sharing any personal information.</p>
+        </div>
+        {% endif %}
+
+        <div class="posting-preview">
+            <h3>Posting Preview:</h3>
+            <p>{{ result.job_text }}</p>
+        </div>
+
+        <a href="/">← Analyze Another Posting</a>
+    </div>
+</body>
+</html>
