@@ -19,9 +19,11 @@ Demonstration:
 
 [Watch my demo of the tool here -->] https://youtu.be/jJcuqAmhNHg
 
+
 Screenshot of UI:
 
 <img width="1412" height="831" alt="Fake Job Posting Detection Tool UI" src="https://github.com/user-attachments/assets/d4c212e4-cc36-4a8f-9d1a-50dcb2fba110" />
+
 
 
 Key additions over the original tool:
@@ -38,21 +40,23 @@ Key additions over the original tool:
 
 *A safety reminder on every clean result to verify the company independently
 
+
 My Tech Stack:
 
 Layer                     Technology
 
-*Backend                  Python 3, Flask
+*Backend;                  Python 3, Flask
 
-*Machine Learning         scikit-learn (Logistic Regression + TF-IDF)
+*Machine Learning;         scikit-learn (Logistic Regression + TF-IDF)
 
-*Rule-Based Detection     Python re (regex)
+*Rule-Based Detection;     Python re (regex)
 
-*Database                 SQLite via sqlite3
+*Database;                 SQLite via sqlite3
 
-*Frontend                 HTML, CSS (Jinja2 templates)
+*Frontend;                 HTML, CSS (Jinja2 templates)
 
-*Development Environment  Kali Linux (virtual machine)
+*Development Environment;  Kali Linux (virtual machine)
+
 
 Machine Learning Approaches Used:
 
