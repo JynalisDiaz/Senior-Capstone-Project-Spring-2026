@@ -23,6 +23,7 @@ Screenshot of UI:
 
 <img width="1412" height="831" alt="Fake Job Posting Detection Tool UI" src="https://github.com/user-attachments/assets/d4c212e4-cc36-4a8f-9d1a-50dcb2fba110" />
 
+
 Key additions over the original tool:
 
 *Plain-language explanations for every flag, not just a score
