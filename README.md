@@ -15,6 +15,10 @@ The classification engine was rebuilt using Logistic Regression with TF-IDF trai
 More importantly, a full explanation layer was added on top: every red flag detected is surfaced with a plain-language description of why that pattern is suspicious and what the user should do about it. 
 The goal is not just to warn users, it's to teach them to recognize these patterns on their own over time.
 
+Demonstration:
+
+[Watch my demo of the tool here -->] https://youtu.be/jJcuqAmhNHg
+
 Key additions over the original tool:
 
 *Plain-language explanations for every flag, not just a score
@@ -209,11 +213,6 @@ References:
 *Pallets Projects. (n.d.). Flask documentation. https://flask.palletsprojects.com/en/stable/
 
 *scikit-learn developers. (n.d.). LogisticRegression. https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html
-
-Demonstration:
-
-[Watch my demo of the tool here -->] https://youtu.be/jJcuqAmhNHg
-
 
 License:
 
