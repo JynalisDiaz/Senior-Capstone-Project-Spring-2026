@@ -18,20 +18,31 @@ The goal is not just to warn users, it's to teach them to recognize these patter
 Key additions over the original tool:
 
 *Plain-language explanations for every flag, not just a score
+
 *9 expanded rule-based flag categories with regex pattern matching
+
 *STRONG_FLAGS override logic to correct the ML model when a high-confidence red flag is detected
+
 *SQLite scan history so users can review all past analyses
+
 *Borderline confidence caution messages so users are never given a false sense of certainty
+
 *A safety reminder on every clean result to verify the company independently
 
 My Tech Stack:
 
 Layer                     Technology
+
 *Backend                  Python 3, Flask
+
 *Machine Learning         scikit-learn (Logistic Regression + TF-IDF)
+
 *Rule-Based Detection     Python re (regex)
+
 *Database                 SQLite via sqlite3
+
 *Frontend                 HTML, CSS (Jinja2 templates)
+
 *Development Environment  Kali Linux (virtual machine)
 
 Machine Learning Approaches Used:
@@ -152,35 +163,51 @@ Testing Results:
 
 The tool was tested on 10 job postings: 6 AI-generated (2 obvious fakes, 2 clearly legitimate, 2 deliberately tricky), 3 real postings from Handshake, and 1 real WhatsApp scam posting.
 
- Test Case                     Result   
+ Test Case                                       Result   
 -Obvious fakes                                   Mixed, some correctly returned LIKELY FAKE with multiple flags and explanations; others returned LIKELY LEGITIMATE despite being fake, showing the ML model's reliance on known scam vocabulary
+
 -Clear legitimate postings                       Correctly returned LIKELY LEGITIMATE with safety net reminder to verify independently
+
 -Hard fakes with hidden patterns                 Inconsistent, the tool caught some through the rule-based layer when the ML model missed the pattern, but others slipped through entirely due to professionally written language with no common scam phrases
+
 -Professionally written fake (no scam language)  Returned LIKELY LEGITIMATE, known limitation; if a posting avoids typical scam vocabulary the model has no pattern to match against
+
 -WhatsApp scam posting                           Flagged: unusual contact method, personal email, suspicious area code that was given to the "model_train.py"
 
 Limitations:
 
 -The ML model relies on patterns present in its training data. Scam postings written without common scam language can yield a false-legitimate verdict.
+
 -Training datasets were collected in 2018 and 2025; scam phrases continue to evolve, and the model would benefit from annual retraining.
+
 -The tool is currently local only and requires manual setup. 
+
 -This tool is meant to guide and educate, not provide a guaranteed verdict. Always verify any employer independently before sharing personal information.
 
 Future Improvements:
 
 -Expand the scam phone number and email blocklist
+
 -Add URL scraping so users can submit a job link directly instead of pasting text
+
 -Build a feedback mechanism so users can flag and report incorrect results for model retraining
+
 -Upgrade to a Random Forest classifier for improved accuracy on borderline cases
+
 -Deploy to a cloud environment (AWS) for public access without local setup
 
 References:
 
 *Bansal, S. (2018). Real or fake? Fake job posting prediction [Dataset]. Kaggle. https://www.kaggle.com/datasets/shivamb/real-or-fake-fake-jobposting-prediction
+
 *Pillai, A. S. (2023). Detecting fake job postings using bidirectional LSTM. International Research Journal of Modernization in Engineering Technology and Science, 5(3). https://doi.org/10.56726/IRJMETS35202
+
 *Yadav, K. (2025). Fake vs real job postings (synthetic NLP dataset) [Dataset]. Kaggle. https://www.kaggle.com/datasets/khushikyad001/fake-vs-real-job-postings-synthetic-nlpdataset
+
 *Virajk19. (2025). fake-job-detector [Source code]. GitHub. https://github.com/Virajk19/fake-job-detector
+
 *Pallets Projects. (n.d.). Flask documentation. https://flask.palletsprojects.com/en/stable/
+
 *scikit-learn developers. (n.d.). LogisticRegression. https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html
 
 License:
