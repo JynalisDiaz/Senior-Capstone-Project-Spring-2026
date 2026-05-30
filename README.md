@@ -210,6 +210,11 @@ References:
 
 *scikit-learn developers. (n.d.). LogisticRegression. https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html
 
+Demonstration:
+
+[Watch my demo of the tool here -->] https://youtu.be/jJcuqAmhNHg
+
+
 License:
 
 This project is licensed under the MIT License. See LICENSE for details.
