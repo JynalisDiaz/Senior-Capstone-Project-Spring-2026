@@ -6,7 +6,7 @@ Jynalis Diaz | Instructor: Dr. Sagar Raina
 
 Overview:
 
-Fake job listings are a major threat to students searching for internships and full- or part-time work. Scammers have been creating convincing postings to collect personal information such as resumes, phone numbers, and Social Security numbers from applicants who may not recognize the warning signs.
+Fraud job listings are a major threat to students searching for internships and full- or part-time work. Scammers have been creating convincing postings to collect personal information such as resumes, phone numbers, and Social Security numbers from applicants who may not recognize the warning signs.
 This project builds on and extends the open-source fake-job-detector by Virajk19, which uses a multi-agent LLM approach to produce a risk score from a job posting. 
 While that tool demonstrates that automated detection is achievable, it, like most existing tools, returns a verdict without explaining the reasoning behind it. 
 A student or regular user who gets a "65% risk score" learns nothing about why the posting is suspicious or how to spot similar scams in the future.
