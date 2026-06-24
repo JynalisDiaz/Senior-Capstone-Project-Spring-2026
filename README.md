@@ -1,5 +1,5 @@
 # Senior-Capstone-Project-Spring-2026
-Design and Development of Fake Job Posting Detection Tool: Modifying Tools To Help Students Avoid Fake Job Postings 
+Design and Development of Fraud Job Posting Detection Tool: Modifying Tools To Help Students Avoid Fake Job Postings 
 
 CYB 4800: Senior Capstone Project | Spring 2026
 Jynalis Diaz | Instructor: Dr. Sagar Raina
